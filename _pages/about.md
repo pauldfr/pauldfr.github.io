@@ -7,12 +7,17 @@ redirect_from:
   - /about.html
 ---
 
-I am a philosopher working on moral psychology, the philosophy of cognitive science, and the philosophy of AI.
+I am a philosopher and cognitive scientist by background, working to develop better evaluations of AI systems. I am a co-founder of Sophron Research, a funded non-profit designing and publicizing tests on AI models and their ability to help us make better decisions.
 
-I am completing my PhD in Philosophy at the University of Michigan, Ann Arbor, where my dissertation, *The Pursuit of Value: Essays on the Cognitive Science of Motivation*, is supervised by Chandra Sripada, Peter Railton, James Joyce, Rick Lewis, and David Chalmers. I have been a Department Visitor at New York University since 2024.
+I have a PhD from the University of Michigan, Ann Arbor, where I completed my dissertation with Chandra Sripada, Peter Railton, James Joyce, Rick Lewis, and David Chalmers. My research has focused on how to explain motivation using empirical and computational methods, and how to understand concepts like desires, preferences, and values, and their relation to rational behavior. I also have interests in consciousness and decision theory.
 
-I am also a co-founder of Sophron Research, an independent research initiative developing third-party evaluation standards for frontier AI models, and a former AI for Human Reasoning Fellow at the Future of Life Foundation.
+I'm a research fellow with the MINT lab, and I have previously been an AI for Human Reasoning Fellow with the Future of Life Foundation. My research has been supported by the Cosmos Institute, Longview Philanthropy, Open Philanthropy, the Institute for Humane Studies, and the Clarendon Foundation. Before Michigan, I completed a BPhil in Philosophy at Trinity College, Oxford, and a BA in Philosophy, Politics, and Economics at Magdalen College, Oxford.
 
-Before Michigan, I completed a BPhil in Philosophy at Trinity College, Oxford, and a BA in Philosophy, Politics, and Economics at Magdalen College, Oxford.
+Some things I'm currently interested in:
+* How can current AIs be designed and tested to improve our individual and institutional decision-making?
+* How do our preferences change? Can an agent rationally bring about such changes?
+* How do we use incommensurable units in decision-making? Should we?
+* What are the necessary conditions of consciousness? How can we design tests for consciousness that are informative across substrates like carbon and silicon?
+* What would it mean for the world to be made out of computations? Might it be?
 
-You can reach me at [pauldfr@umich.edu](mailto:pauldfr@umich.edu).
+Aside from my academic research, I (aspirationally) write on my Substack, [The Internal World](https://substack.com/@pauldfr). You can also find me on X [@PReaulx](https://x.com/PReaulx) or reach me at [pauldfr@umich.edu](mailto:pauldfr@umich.edu).
