@@ -90,6 +90,8 @@ publication_category:
     title: 'Invited'
 
 # Site Settings
+titles_from_headings:
+  enabled              : false # don't promote a page's first heading to its title
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
