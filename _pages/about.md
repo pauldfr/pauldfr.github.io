@@ -13,7 +13,7 @@ I am a philosopher and cognitive scientist by background, working on developing 
 
 I received my PhD from the University of Michigan in 2026. My research has focused on how to explain motivation using empirical and computational methods, and how to understand the relation between concepts like desires, preferences, and values, and their relation to rational behavior. I also have interests in consciousness and decision theory.
 
-I'm a mentor for [SPAR](https://sparai.org/), a research affiliate with the [MINT lab](https://mintresearch.org/), and I have previously been an AI for Human Reasoning Fellow with the [Future of Life Foundation](https://www.flf.org/). My research has been supported by the Cosmos Institute, Longview Philanthropy, Open Philanthropy, the Institute for Humane Studies, and the Clarendon Foundation. Before Michigan, I completed a BPhil in Philosophy at Trinity College, Oxford, and a BA in Philosophy, Politics, and Economics at Magdalen College, Oxford. Before that, I grew up in a town known for having the [world's largest straw goat](https://en.wikipedia.org/wiki/G%C3%A4vle_goat).
+I'm a mentor for [SPAR](https://sparai.org/), a research affiliate with the [MINT lab](https://mintresearch.org/), and I have previously been an AI for Human Reasoning Fellow with the [Future of Life Foundation](https://www.flf.org/). My research has been supported by the Cosmos Institute, Longview Philanthropy, Open Philanthropy, the Institute for Humane Studies, and the Clarendon Foundation. Before Michigan, I completed a BPhil in Philosophy and a BA in Philosophy, Politics, and Economics, both at Oxford. Before that, I grew up in a town known for having the [world's largest straw goat](https://en.wikipedia.org/wiki/G%C3%A4vle_goat).
 
 ## Interests
 
