@@ -29,7 +29,7 @@ author:
   location         : "New York, NY"
   employer         : "University of Michigan"
   uri              : # URL
-  email            : "paul.defontreaulx@gmail.com"
+  email            : "pauldfr@umich.edu"
 
   # Academic websites
   academia         : # URL
@@ -73,7 +73,8 @@ author:
   steam            : # Username
   telegram         : # URL
   tumblr           : # Username
-  twitter          : # Username for X / Twitter
+  twitter          : "PReaulx"
+  substack         : "https://substack.com/@pauldfr"
   vine             : # Username
   weibo            : # Username
   wikipedia        : # Username

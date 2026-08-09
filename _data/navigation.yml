@@ -12,20 +12,14 @@ main:
     url: /publications/
 
   - title: "Talks"
-    url: /talks/    
+    url: /talks/
 
-  - title: "Teaching"
-    url: /teaching/    
-    
-  - title: "Portfolio"
-    url: /portfolio/
-        
   - title: "Substack"
     url: https://substack.com/@pauldfr
-    
+
   - title: "CV"
-    url: /cv/
-    
+    url: /files/cv.pdf
+
   # - title: "CV"
   #   url: /cv-json/
     

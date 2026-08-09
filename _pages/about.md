@@ -15,4 +15,4 @@ I am also a co-founder of Sophron Research, an independent research initiative d
 
 Before Michigan, I completed a BPhil in Philosophy at Trinity College, Oxford, and a BA in Philosophy, Politics, and Economics at Magdalen College, Oxford.
 
-You can reach me at [paul.defontreaulx@gmail.com](mailto:paul.defontreaulx@gmail.com).
+You can reach me at [pauldfr@umich.edu](mailto:pauldfr@umich.edu).
