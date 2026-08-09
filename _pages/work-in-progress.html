@@ -1,0 +1,13 @@
+---
+layout: archive
+title: "Work in Progress"
+permalink: /work-in-progress/
+author_profile: true
+---
+
+{% include base_path %}
+
+{% assign items = site.wip | sort: 'order' %}
+{% for post in items %}
+  {% include archive-single-wip.html %}
+{% endfor %}

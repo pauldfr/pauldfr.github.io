@@ -1,0 +1,20 @@
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ post.title }}</a>
+      {% else %}
+        {{ post.title }}
+      {% endif %}
+    </h2>
+    {% if post.abstract %}
+      <details class="abstract-details">
+        <summary>Abstract</summary>
+        <p>{{ post.abstract }}</p>
+      </details>
+    {% endif %}
+    {% if post.draft_status %}
+      <p><em>{{ post.draft_status }}</em></p>
+    {% endif %}
+  </article>
+</div>

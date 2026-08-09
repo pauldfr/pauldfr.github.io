@@ -11,6 +11,9 @@ main:
   - title: "Publications"
     url: /publications/
 
+  - title: "Work in Progress"
+    url: /work-in-progress/
+
   - title: "Substack"
     url: https://substack.com/@pauldfr
 
