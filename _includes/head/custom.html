@@ -10,7 +10,7 @@
  <link rel="preload" href="{{ base_path }}/assets/css/fontawesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{ base_path }}/assets/css/fontawesome.css"></noscript>
 
-<!-- favicon from https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_academic-progressive.svg -->
+<!-- square favicon carried over from pauldfr.com -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png"/>
 <link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg"/>
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32"/>
@@ -18,5 +18,22 @@
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="var(--global-bg-color)"/>
+
+<!-- collapsible abstracts on publication listings -->
+<style>
+  .abstract-details { margin: 0.25em 0 0.75em; }
+  .abstract-details summary {
+    cursor: pointer;
+    font-size: 0.8em;
+    color: var(--global-text-color-light, #666);
+  }
+  .abstract-details[open] summary { margin-bottom: 0.25em; }
+  .abstract-details p {
+    font-size: 0.8em;
+    margin: 0 0 0.5em;
+    padding-left: 1em;
+    border-left: 2px solid var(--global-border-color, #ddd);
+  }
+</style>
 
 <!-- end custom head snippets -->
