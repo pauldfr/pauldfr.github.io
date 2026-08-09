@@ -9,9 +9,9 @@ redirect_from:
 
 I am a philosopher and cognitive scientist by background, working to develop better evaluations of AI systems. I am a co-founder of Sophron Research, a funded non-profit designing and publicizing tests on AI models and their ability to help us make better decisions.
 
-I have a PhD from the University of Michigan, Ann Arbor, where I completed my dissertation with Chandra Sripada, Peter Railton, James Joyce, Rick Lewis, and David Chalmers. My research has focused on how to explain motivation using empirical and computational methods, and how to understand concepts like desires, preferences, and values, and their relation to rational behavior. I also have interests in consciousness and decision theory.
+I have a PhD from the University of Michigan, Ann Arbor, where I completed my dissertation with Chandra Sripada, Peter Railton, James Joyce, Rick Lewis, and David Chalmers. My research has focused on how to explain motivation using empirical and computational methods, and how to understand the relation between concepts like desires, preferences, and values, and their relation to rational behavior. I also have interests in consciousness and decision theory.
 
-I'm a research fellow with the MINT lab, and I have previously been an AI for Human Reasoning Fellow with the Future of Life Foundation. My research has been supported by the Cosmos Institute, Longview Philanthropy, Open Philanthropy, the Institute for Humane Studies, and the Clarendon Foundation. Before Michigan, I completed a BPhil in Philosophy at Trinity College, Oxford, and a BA in Philosophy, Politics, and Economics at Magdalen College, Oxford.
+I'm a research affiliate with the [MINT lab](https://mintresearch.org/), and I have previously been an AI for Human Reasoning Fellow with the Future of Life Foundation. My research has been supported by the Cosmos Institute, Longview Philanthropy, Open Philanthropy, the Institute for Humane Studies, and the Clarendon Foundation. Before Michigan, I completed a BPhil in Philosophy at Trinity College, Oxford, and a BA in Philosophy, Politics, and Economics at Magdalen College, Oxford.
 
 Some things I'm currently interested in:
 * How can current AIs be designed and tested to improve our individual and institutional decision-making?
