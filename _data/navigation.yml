@@ -20,8 +20,8 @@ main:
   - title: "Portfolio"
     url: /portfolio/
         
-  - title: "Blog Posts"
-    url: /year-archive/
+  - title: "Substack"
+    url: https://substack.com/@pauldfr
     
   - title: "CV"
     url: /cv/
