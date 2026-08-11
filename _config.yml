@@ -13,7 +13,7 @@ title                    : "Paul de Font-Reaulx"
 title_separator          : "-"
 name                     : &name "Paul de Font-Reaulx"
 description              : &description "Paul de Font-Reaulx's academic website"
-url                      : https://pauldfr.github.io # switch to https://www.pauldfr.com once the custom domain is connected
+url                      : https://www.pauldfr.com
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "pauldfr/pauldfr.github.io"
 
