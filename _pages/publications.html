@@ -11,9 +11,15 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.publications reversed %}
+{% assign papers = site.publications | where_exp: "item", "item.category != 'dissertation'" %}
+{% for post in papers reversed %}
   {% include archive-single.html %}
 {% endfor %}
 
-
-
+{% assign dissertation = site.publications | where: "category", "dissertation" %}
+{% if dissertation.size > 0 %}
+  <h2 id="dissertation" class="archive__subtitle">Dissertation</h2>
+  {% for post in dissertation %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}

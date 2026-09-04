@@ -48,11 +48,16 @@
     color: var(--global-text-color-light, #666);
   }
   .abstract-details[open] summary { margin-bottom: 0.25em; }
-  .abstract-details p {
-    font-size: 0.8em;
-    margin: 0 0 0.5em;
+  .abstract-details .abstract-body {
     padding-left: 1em;
     border-left: 2px solid var(--global-border-color, #ddd);
+  }
+  .archive .list__item .abstract-details .abstract-body p {
+    font-size: 0.8em;
+    margin: 0.15em 0 0.6em;
+  }
+  .archive .list__item .abstract-details .abstract-body p:last-child {
+    margin-bottom: 0.15em;
   }
 </style>
 

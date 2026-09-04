@@ -46,7 +46,7 @@
           {% if post.abstract %}
             <details class="abstract-details">
               <summary>Abstract</summary>
-              <p>{{ post.abstract }}</p>
+              <div class="abstract-body">{{ post.abstract | markdownify }}</div>
             </details>
           {% endif %}
         {% elsif post.date %}
