@@ -1,0 +1,144 @@
+% Policy CV working draft, 19 November 2026.
+% Compile with: pdflatex Paul_de_Font-Reaulx_Policy_CV.tex
+% Editorial checks for the next revision:
+% - Confirm current publication status of Reward is Evidence of Value.
+% - Pander Score citation verified against arXiv:2606.07897.
+% - Some long publication titles use clearly abbreviated display headings.
+% - GovAI Research Fellow title supplied by Paul; original CV said Research Intern.
+% - EU adoption is deliberately omitted pending confirmation.
+% - Fellowship dates follow the existing academic CV; PhD award, title,
+%   hiring and $2.2m received are confirmed by Paul in conversation.
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Paul de Font-Reaulx | Policy CV},pdfauthor={Paul de Font-Reaulx}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlist[itemize]{leftmargin=1.25em,itemsep=1pt,topsep=0pt,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{-1pt}\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\small Paul de Font-Reaulx}
+\fancyfoot[R]{\small\thepage}
+\setlength{\footskip}{25pt}
+\newcommand{\role}[3]{\textbf{#1}\hfill #3\\\textit{#2}\par}
+\newcommand{\pub}[2]{\noindent\parbox[t]{0.88\linewidth}{\textbf{#1}}\hfill\parbox[t]{0.10\linewidth}{\raggedleft #2}\\}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Paul de Font-Reaulx}\\[5pt]
+\href{mailto:paul.defontreaulx@gmail.com}{paul.defontreaulx@gmail.com}
+\quad\textbar\quad \href{https://www.pauldfr.com}{pauldfr.com}
+\end{center}
+\vspace{-4pt}
+AI researcher and nonprofit executive director working on frontier-model evaluation, human reasoning, and AI governance. PhD in philosophy with research spanning cognitive science, decision theory, and AI safety.
+
+\section{Professional Experience}
+\role{Sophron Research}{Co-Founder and Executive Director}{2026--present}
+\begin{itemize}
+\item Co-founded Sophron and raised \$2.2 million for independent frontier-model evaluation research.
+\item Set research strategy, built partnerships, and led a successful research scientist hiring process.
+\item Co-created Pander Score, a regularly updated sycophancy benchmark tracking AI deference to users' beliefs.
+\item Mentored four researchers through the Supervised Program for Alignment Research (SPAR).
+\end{itemize}
+\vspace{1pt}
+\role{Future of Life Foundation}{AI for Human Reasoning Fellow}{2025}
+\begin{itemize}
+\item Developed behavioral benchmarks for frontier models focused on supporting human reasoning.
+\end{itemize}
+\vspace{1pt}
+\role{GovAI, University of Oxford}{Research Fellow}{2018}
+\begin{itemize}
+\item Researched AI, authoritarian governance, and human rights.
+\item Authored a report submitted as expert testimony to the Tom Lantos Human Rights Commission.
+\item Presented research to representatives of the Mexican government.
+\end{itemize}
+
+\section{Education}
+\entry{University of Michigan, Ann Arbor}{2020--2026}
+PhD in Philosophy; Certificate in Cognitive Science.\\
+Dissertation: \textit{The Pursuit of Value: Essays on the Cognitive Science of Motivation}.
+
+\entry{University of Oxford, Trinity College}{2018--2020}
+BPhil in Philosophy, Distinction. Clarendon Scholar.
+
+\entry{University of Oxford, Magdalen College}{2014--2017}
+BA in Philosophy, Politics, and Economics, First Class.\\
+Anscombe Thesis Prize for the best philosophy thesis of the year.
+
+\section{Selected Fellowships and Research Appointments}
+\textbf{New York University} --- Department Visitor working with David Chalmers \hfill 2024--2026\\
+\textbf{Institute for Humane Studies} --- Junior Fellowship \hfill 2024, 2025\\
+\textbf{Mercatus Center} --- Adam Smith Fellowship \hfill 2023
+
+\section{Policy and Public Engagement}
+\entry{Institute for Humane Studies, Liberal Solutions Summit}{2026}
+Advised on the design of AI alignment workshops, translating philosophical principles into approaches to model specification and evaluation, including constitutions, judge models, and benchmarks.
+
+\entry{Svenska Dagbladet, opinion article}{2026}
+Called for Sweden to sign the international declaration on human control of frontier AI. \href{https://www.svd.se/a/OkKKWV/sverige-bor-skriva-under-det-internationella-ai-uppropet-skriver-paul-de-font-reaulx}{[Article, in Swedish]}
+
+
+\newpage
+\section{Selected Research on AI Policy and Evaluations}
+% Full title: Pander Score: A Continuous Measure of Sycophancy as Epistemic Deference.
+\entry{Pander Score: A Continuous Measure of Sycophancy}{2026}
+Alejandro Botas, Paul de Font-Reaulx, and Luke Hewitt. \textit{arXiv preprint}. \href{https://arxiv.org/abs/2606.07897}{[Paper]}\\
+Measures epistemic deference using LLM judges validated against human judgments; evaluates 18 models across 349 propositions and over 11,000 prompts.
+
+% Full title: DeliberationBench: A Normative Benchmark for the Influence of Large Language Models on Users' Views.
+\entry{DeliberationBench}{2026}
+Luke Hewitt, Max Kroner Dale, and Paul de Font-Reaulx. \textit{Proceedings of IASEAI 2026}. \href{https://arxiv.org/abs/2603.10018}{[Paper]}\\
+A normative benchmark for the influence of large language models on users' views.
+
+% Full title: Prioritization of Risks from Artificial Intelligence: A Delphi Study of 272 International Experts.
+\entry{Prioritization of Risks from Artificial Intelligence}{2026}
+Alexander K. Saeri et al., including Paul de Font-Reaulx. MIT AI Risk Initiative. \textit{Preprint}. \href{https://airisk.mit.edu/priorities}{[Project]}\\
+Delphi study of 272 international experts on AI risk priorities.
+
+\entry{AI: The Consequences for Human Rights}{2018}
+Paul de Font-Reaulx. GovAI report on the prospective use of AI in authoritarian regimes; submitted as expert testimony to the Tom Lantos Human Rights Commission.
+
+\section{AI Safety and Technical Research}
+% Full title: MoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More than Outcomes.
+\entry{MoReBench: Evaluating Moral Reasoning in Language Models}{2026}
+Yu Ying Chiu et al., including Paul de Font-Reaulx. \textit{Proceedings of ICLR 2026}. \href{https://morebench.github.io/}{[Project]}\\
+Evaluation of procedural and pluralistic moral reasoning beyond outcome-based assessment.
+
+\entry{Reward is Evidence of Value}{Forthcoming}
+Paul de Font-Reaulx. \textit{Philosophy of Science}.
+
+\entry{Machine Theory of Mind and the Structure of Human Values}{2023}
+Paul de Font-Reaulx. Accepted to the \textit{NeurIPS MP2 Workshop}.
+
+\entry{Alignment as a Dynamic Process}{2022}
+Paul de Font-Reaulx. \textit{NeurIPS ML Safety Workshop}; AI Risk Analysis Award winner.
+
+\section{Prizes}
+\textbf{AI Alignment Awards} --- Final Prize Winner (\$5,000) \hfill 2023\\
+\textit{Generative Theory of Mind and the Value Misgeneralization Problem}.\\[3pt]
+\textbf{AI Risk Analysis Award} --- Winner (approximately \$1,900) \hfill 2022\\
+\textit{Alignment as a Dynamic Process}, NeurIPS ML Safety Workshop.
+
+\section{Selected Peer Review}
+\textbf{ML and AI:} ICML Second Workshop on Technical AI Governance Research (2026); NeurIPS MP2 Workshop (2023); Apart Research AI Manipulation Hackathon (2026).\\
+\textbf{Journals:} \textit{Synthese}; \textit{Philosophy Compass}; \textit{Moral Philosophy and Politics}; \textit{Journal of Consciousness Studies}.
+
+\section{Selected Research Grants}
+\textbf{Cosmos X FIRE Grant for Truth-Seeking} --- \$7,500 for DeliberationBench \hfill 2025\\
+\textbf{Longview Philanthropy} --- \$23,900 for research on AI sentience \hfill 2025\\
+\textbf{Open Philanthropy} --- \$44,770 Early Career Grant for AI safety research \hfill 2023
+
+\section{Additional Leadership}
+\textbf{Project Access, Sweden} --- Founder and President \hfill 2016--2017\\
+\textbf{Oxford University Scandinavian Society} --- President \hfill 2015--2016
+\end{document}

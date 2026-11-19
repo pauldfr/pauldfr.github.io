@@ -1,0 +1,74 @@
+"""Build the local preview using only Python's standard library."""
+from pathlib import Path
+import json,html,re,os
+ROOT=Path(__file__).resolve().parent
+E=html.escape
+pubs=json.loads((ROOT/'content/publications.json').read_text())
+wips=json.loads((ROOT/'content/working-papers.json').read_text())
+EMAIL='paul@sophronresearch.org'
+def shell(title,body,active='About',prefix=''):
+ nav=''.join(f'<a href="{url if url.startswith('https://') else prefix+url}"'+(' aria-current="page"' if label==active else '')+f'>{label}</a>' for label,url in [('About','index.html'),('Research','research.html'),('Substack','https://substack.com/@pauldfr'),('CV','files/policy-cv.pdf')])
+ return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Paul de Font-Reaulx. AI researcher and co-founder of Sophron Research, working on independent evaluation, AI safety, and governance."><title>{E(title)} | Paul de Font-Reaulx</title><link rel="stylesheet" href="{prefix}assets/style.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap"><div class="header-inner"><a class="brand" href="{prefix}index.html">Paul de Font-Reaulx</a><nav aria-label="Main navigation">{nav}</nav></div></div></header><main id="main">{body}</main><footer class="footer"><div class="wrap footer-inner"><span>Paul de Font-Reaulx · New York</span><div class="footer-links"><a href="mailto:{EMAIL}">Email</a><a href="https://github.com/pauldfr">GitHub</a><a href="https://x.com/PReaulx">X</a><a href="https://substack.com/@pauldfr">Substack</a></div></div></footer></body></html>'''
+def write(path,body,title,active='About'):
+ dest=ROOT/path;dest.parent.mkdir(parents=True,exist_ok=True)
+ prefix='../'*(len(Path(path).parts)-1)
+ dest.write_text(shell(title,body,active,prefix))
+def local_link(d,prefix=''):
+ return prefix+d.get('permalink','').lstrip('/').rstrip('/')+'/index.html'
+def link_for(d,prefix=''):
+ link=d.get('link') or d.get('paperurl') or ''
+ if link.startswith('/'):return prefix+link.lstrip('/')
+ if '{{' in link: return prefix+link.split('}}')[-1].lstrip('/')
+ return link
+home='''<div class="wrap personal-layout"><aside class="profile"><img src="assets/portrait.jpg" alt="Paul de Font-Reaulx" width="180" height="180"><h2>Paul de Font-Reaulx</h2><p>Co-Founder &amp; Executive Director<br><a href="https://sophronresearch.org/">Sophron Research</a></p><p>New York, NY</p><ul><li><a href="mailto:paul@sophronresearch.org">Email</a></li><li><a href="files/policy-cv.pdf">CV</a></li><li><a href="https://github.com/pauldfr">GitHub</a></li><li><a href="https://x.com/PReaulx">X</a></li><li><a href="https://substack.com/@pauldfr">Substack</a></li></ul></aside><div class="personal-content"><h1>About</h1><p>I am a researcher working on AI evaluation, safety, and governance, and the co-founder and executive director of <a href="https://sophronresearch.org/">Sophron Research</a>. We develop independent evaluations of frontier AI systems, with a focus on how they affect human beliefs and decision-making.</p><p>My background is in philosophy and cognitive science. I received my PhD from the University of Michigan in 2026, and previously completed a BPhil in Philosophy and a BA in Philosophy, Politics, and Economics at Oxford. From 2024 to 2026, I was a Department Visitor at NYU, working with David Chalmers.</p><h2>Research</h2><p>My current work focuses on evaluating AI behavior and its implications for human agency and governance. Selected projects include:</p><ul class="work-list"><li><a href="publication/ai-epistemic-deference-index/index.html">Pander Score</a>, a regularly updated sycophancy benchmark measuring how strongly AI models defer to users’ beliefs.</li><li><a href="publication/deliberationbench/index.html">DeliberationBench</a>, a benchmark comparing AI’s influence on users’ views with opinion changes following structured human deliberation.</li><li><a href="publication/prioritization-of-risks/index.html">AI risk prioritization</a>, a collaborative Delphi study of 272 international experts on AI risks and mitigation priorities.</li></ul><p>I also work on human values, motivation, decision theory, and consciousness. See my <a href="research.html">research page</a> for publications and working papers.</p><h2 id="engagement">Policy and public engagement</h2><p>I previously worked at GovAI in Oxford on AI, authoritarian governance, and human rights. My report was submitted as expert testimony to the Tom Lantos Human Rights Commission, and I presented research to representatives of the Mexican government.</p><p>More recently, I advised on the AI workshops at the Institute for Humane Studies’ Liberal Solutions Summit and wrote in <a href="https://www.svd.se/a/OkKKWV/sverige-bor-skriva-under-det-internationella-ai-uppropet-skriver-paul-de-font-reaulx"><em>Svenska Dagbladet</em></a> about human control of frontier AI.</p><h2>Background</h2><p>I am a mentor for four researchers through <a href="https://sparai.org/">SPAR</a>, a research affiliate with the <a href="https://mintresearch.org/">MINT lab</a>, and a former AI for Human Reasoning Fellow with the Future of Life Foundation. I have held fellowships with the Institute for Humane Studies and the Mercatus Center, and was a Clarendon Scholar at Oxford.</p><p>I grew up in Gävle, Sweden, known for the <a href="https://en.wikipedia.org/wiki/G%C3%A4vle_goat">world’s largest straw goat</a>. I write about mind and values on <a href="https://substack.com/@pauldfr">The Internal World</a>.</p><p><a href="about.html">Full biography</a> · <a href="files/policy-cv.pdf">Download CV</a></p></div></div>'''
+write('index.html',home,'AI research, evaluation & governance')
+about='''<div class="wrap"><div class="page-heading"><p class="eyebrow">Background</p><h1>About me</h1><p>My work connects questions about human judgment and values with the practical task of evaluating AI systems.</p></div><div class="about-grid"><div class="prose"><section class="about-section"><h2>Building independent evaluation</h2><p>I am the co-founder and executive director of <a href="https://sophronresearch.org/">Sophron Research</a>, an independent nonprofit developing evaluations of frontier AI systems. I lead organizational strategy and partnerships, have raised $2.2 million, and led a successful research scientist hiring process.</p><p>I co-created Pander Score, a regularly updated benchmark of AI sycophancy, and co-authored DeliberationBench, which examines AI influence on people’s views. I also mentor four researchers through <a href="https://sparai.org/">SPAR</a> and am a research affiliate with the <a href="https://mintresearch.org/">MINT lab</a>.</p></section><section class="about-section"><h2>Philosophy and cognitive science</h2><p>I received my PhD in Philosophy from the University of Michigan in 2026, alongside a Certificate in Cognitive Science. My dissertation, <em>The Pursuit of Value</em>, examines motivation through empirical and computational approaches.</p><p>From 2024 to 2026, I was a Department Visitor at New York University, working with David Chalmers. Before Michigan, I completed a BPhil in Philosophy with Distinction at Trinity College, Oxford, as a Clarendon Scholar, and a First Class BA in Philosophy, Politics, and Economics at Magdalen College, Oxford. My undergraduate thesis received the Anscombe Thesis Prize.</p><p>I remain interested in how preferences change, how reward relates to value, and what would count as evidence of consciousness in artificial systems.</p></section><section class="about-section"><h2>Policy, fellowships, and leadership</h2><p>At GovAI in Oxford, I researched AI’s implications for authoritarian governance and human rights. My report was submitted as expert testimony to the Tom Lantos Human Rights Commission, and I presented research to representatives of the Mexican government.</p><p>I have been an AI for Human Reasoning Fellow with the Future of Life Foundation, a Junior Fellow with the Institute for Humane Studies, and an Adam Smith Fellow with the Mercatus Center. My research has also received support from the Cosmos Institute, Longview Philanthropy, and Open Philanthropy.</p><p>Earlier, I founded and led Project Access in Sweden and served as president of the Oxford University Scandinavian Society.</p></section><section class="about-section"><h2>Beyond the research</h2><p>I grew up in Gävle, Sweden, known for the <a href="https://en.wikipedia.org/wiki/G%C3%A4vle_goat">world’s largest straw goat</a>. I write about mind, values, and related questions on <a href="https://substack.com/@pauldfr">The Internal World</a>.</p><p>For research collaborations, policy discussions, or speaking invitations, contact <a href="mailto:paul@sophronresearch.org">paul@sophronresearch.org</a>.</p><a class="button" href="files/policy-cv.pdf">Download my CV</a></section></div><figure style="margin:0"><img class="portrait" src="assets/portrait.jpg" alt="Paul de Font-Reaulx" width="250" height="313"></figure></div></div>'''
+write('about.html',about,'About')
+# Archive source text and metadata are preserved in content/; existing permalinks receive local pages.
+groups={'policy':[],'technical':[],'philosophy':[]}
+policy_keys=['ai-epistemic','deliberationbench','prioritization']
+tech_keys=['morebench','machine-theory','generative-theory','alignment-as']
+summaries={
+'ai-epistemic':'A continuous measure of AI sycophancy, designed for independent comparison of models and validated against human judgments.',
+'deliberationbench':'A benchmark for AI influence on users’ views, using structured human deliberation as its reference.',
+'prioritization':'A Delphi study of 272 international experts on AI risk priorities and responsibilities for mitigation.',
+'morebench':'Evaluating procedural and pluralistic moral reasoning in language models, beyond their final answers.',
+'reward-is':'A philosophical and computational account of reward as evidence of value, with implications for interpreting reinforcement learning.',
+'machine-theory':'How models of human values could generalize beyond observed behavior.',
+'generative-theory':'An approach to value misgeneralization grounded in the structure of human preferences.',
+'alignment-as':'An agenda for aligning agents whose aims can change over time.',
+'commitment-issues':'A defense of expected utility theory in decisions involving changing preferences and commitment.',
+'motivation-pleasure':'Research on the relationships among motivation, pleasure, and valence.',
+'discrimination':'A philosophical account of the moral considerations involved in discrimination.',
+'dissertation':'Essays connecting human motivation, value, and rational choice with cognitive science and AI.'}
+for d in pubs:
+ key=d['source_file'];cat='policy' if any(k in key for k in policy_keys) else 'technical' if any(k in key for k in tech_keys) else 'philosophy'
+ d['group']=cat;d['summary']=next((v for k,v in summaries.items() if k in key),'')
+ groups[cat].append(d)
+for group in groups.values():group.sort(key=lambda d:d['date'],reverse=True)
+def paper(d,cat):
+ link=link_for(d)
+ paper_link=f' · <a class="paper-link" href="{E(link)}">Read paper</a>' if link else ''
+ return f'''<article class="paper" data-paper data-category="{cat}"><p class="meta">{E(str(d.get('venue','Working paper')))} · {E(str(d.get('pub_year','')))}</p><h3><a href="{local_link(d)}">{E(d['title'])}</a></h3><p>{E(d['summary'])}</p><a class="paper-link" href="{local_link(d)}">Abstract & publication details</a>{paper_link}</article>'''
+research='''<div class="wrap"><div class="page-heading"><h1>Research</h1><p>My research spans AI evaluation and governance, AI safety, and the philosophy and cognitive science of human values.</p></div><div class="filters" role="group" aria-label="Research categories"><button class="filter" data-filter="all" aria-pressed="true">All research</button><button class="filter" data-filter="policy" aria-pressed="false">AI policy and evaluations</button><button class="filter" data-filter="technical" aria-pressed="false">AI safety and technical research</button><button class="filter" data-filter="philosophy" aria-pressed="false">Philosophy and cognitive science</button></div>''' 
+for cat,title in [('policy','AI policy and evaluations'),('technical','AI safety and technical research'),('philosophy','Philosophy and cognitive science')]:
+ research+=f'<section class="research-group" id="{cat}"><h2>{title}</h2>'+''.join(paper(d,cat) for d in groups[cat])
+ if cat=='policy':research+='''<article class="paper" data-paper data-category="policy"><p class="meta">GovAI report · 2018</p><h3>AI: The Consequences for Human Rights</h3><p>Research on the prospective use of AI in authoritarian regimes, submitted as expert testimony to the Tom Lantos Human Rights Commission.</p><a class="paper-link" href="index.html#engagement">Policy engagement</a></article>'''
+ if cat=='philosophy':
+  for d in wips:
+   research+=f'''<article class="paper" data-paper data-category="philosophy"><p class="meta">Working paper</p><h3>{E(d['title'])}</h3><details><summary>Read abstract</summary><p>{E(d['abstract'])}</p></details><a class="paper-link" href="mailto:{EMAIL}?subject=Draft%20request">Request a draft</a></article>'''
+ research+='</section>'
+research+='</div><script defer src="assets/research.js"></script>'
+write('research.html',research,'Research','Research')
+for d in pubs:
+ path=d['permalink'].strip('/')+'/index.html';prefix='../'*(len(Path(path).parts)-1)
+ link=link_for(d,prefix)
+ abstract=''.join('<p>'+E(p.strip())+'</p>' for p in d.get('abstract','').split('\n') if p.strip()) or '<p>Publication details are listed below.</p>'
+ body=f'''<div class="wrap"><article class="article"><p class="eyebrow">{E(d['venue'])} · {E(str(d['pub_year']))}</p><h1>{E(d['title'])}</h1><p>{E(d['summary'])}</p><div class="links">{f'<a class="button" href="{E(link)}">Read the paper</a>' if link else ''}<a href="{prefix}research.html">All research</a></div><h2>Abstract</h2>{abstract}<div class="citation">{d.get('citation','')}</div></article></div>'''
+ write(path,body,d['title'],'Research')
+# Compatibility pages for existing public paths, without requiring a server redirect.
+for old,new in [('publications/index.html','research.html'),('work-in-progress/index.html','research.html#philosophy'),('about/index.html','about.html')]:
+ write(old,f'<div class="wrap"><div class="page-heading"><h1>This page has moved.</h1><p><a href="../{new}">Continue to the updated page</a></p></div></div>','Continue')
+print(f'Built three main pages and {len(pubs)} publication pages.')
+
+write("cv/index.html", '<div class="wrap page-heading"><h1>CV</h1><p><a href="../files/policy-cv.pdf">Download CV</a></p></div>', "CV", "CV")
